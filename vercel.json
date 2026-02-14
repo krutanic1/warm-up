@@ -4,5 +4,11 @@
       "path": "/api/warmup",
       "schedule": "*/30 * * * *"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/index"
+    }
   ]
 }
