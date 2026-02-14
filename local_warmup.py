@@ -103,10 +103,11 @@ def warmup_job():
     time.sleep(delay)
 
 
-schedule.every(1).minutes.do(warmup_job)
+if __name__ == "__main__":
+    schedule.every(1).minutes.do(warmup_job)
 
-log("🔥 Dual Gmail Warm-Up Started...")
+    log("🔥 Dual Gmail Warm-Up Started...")
 
-while True:
-    schedule.run_pending()
-    time.sleep(5)
+    while True:
+        schedule.run_pending()
+        time.sleep(5)

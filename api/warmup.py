@@ -31,9 +31,11 @@ PASS2 = os.getenv("PASS2")
 
 KV_REST_API_URL = os.getenv("KV_REST_API_URL")
 KV_REST_API_TOKEN = os.getenv("KV_REST_API_TOKEN")
+import tempfile
+
 LOCAL_STATE_PATH = os.getenv(
     "LOCAL_STATE_PATH",
-    os.path.join(os.path.dirname(__file__), ".warmup_state.json"),
+    os.path.join(tempfile.gettempdir(), ".warmup_state.json"),
 )
 
 DAILY_LIMIT = int(os.getenv("DAILY_LIMIT", "10"))
